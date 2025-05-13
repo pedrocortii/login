@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenido {{ user.Email }}</h2>
+
+        <table>
+            <tr><th>ID</th><td>{{ user.IdCliente }}</td></tr>
+            <tr><th>Email</th><td>{{ user.Email }}</td></tr>
+            <tr><th>Contraseña</th><td>{{ user.Contraseña }}</td></tr>
+        </table>
+
+        <br>
+        <a href="/editar/{{ user.IdCliente }}">Editar mi cuenta</a> |
+        <a href="/eliminar/{{ user.IdCliente }}">Eliminar mi cuenta</a> |
+        <a href="/logout">Cerrar sesión</a>
+    </div>
+</body>
+</html>
